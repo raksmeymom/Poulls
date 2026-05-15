@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poulls — Find Eco-Friendly Homes</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+      <a class="logo" href="#home">
+        <span class="logo-icon">P</span>
+        Poulls
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active" data-sec="home">Home</a></li>
+        <li><a href="#find" data-sec="find">Find</a></li>
+        <li><a href="#real-estate" data-sec="real-estate">Real Estate</a></li>
+        <li><a href="#contact" data-sec="contact">Contact</a></li>
+      </ul>
+      <button
+        class="btn-nav"
+        onclick="
+          document.getElementById('find').scrollIntoView({ behavior: 'smooth' })
+        "
+      >
+        Get Started
+      </button>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-gradient"></div>
+      <div class="hero-inner">
+        <div class="pill-tag">
+          <span class="pill-dot"></span>340+ Verified Listings
+        </div>
+        <h1>Find <em>eco-friendly</em><br />homes easily.</h1>
+        <p>
+          Your one-stop platform to discover sustainable homes that match your
+          lifestyle, values, and budget — without the noise.
+        </p>
+        <div class="hero-btns">
+          <a class="btn btn-primary" href="#find">Explore Listings</a>
+          <a class="btn btn-ghost" href="#real-estate">Our Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEARCH -->
+    <div class="search-wrap fade-in">
+      <div class="search-bar">
+        <div class="s-field">
+          <span class="s-label">Location</span>
+          <input type="text" placeholder="Austin, Portland, Denver…" />
+        </div>
+        <div class="s-field">
+          <span class="s-label">Home type</span>
+          <select>
+            <option>Any eco home</option>
+            <option>Solar ready</option>
+            <option>Net-zero</option>
+            <option>Urban townhouse</option>
+          </select>
+        </div>
+        <div class="s-field">
+          <span class="s-label">Budget</span>
+          <select>
+            <option>Any price</option>
+            <option>Under $450k</option>
+            <option>$450k – $750k</option>
+            <option>$750k+</option>
+          </select>
+        </div>
+        <button class="search-btn" type="button">Search</button>
+      </div>
+    </div>
+
+    <!-- FIND -->
+    <section class="section" id="find">
+      <div class="fade-in">
+        <p class="section-label">Find</p>
+        <h2 class="display">
+          Homes selected for<br />comfort &amp; efficiency.
+        </h2>
+      </div>
+      <div class="listings-grid fade-in">
+        <article class="listing-card">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=700&q=80"
+              alt="Forest Edge Modern"
+            />
+            <span class="card-badge">Solar Ready</span>
+          </div>
+          <div class="card-body">
+            <p class="card-meta">3 beds · Portland, OR</p>
+            <h3>Forest Edge Modern</h3>
+            <p>
+              Passive cooling, reclaimed timber finishes, and an EV-ready garage
+              near parks and transit.
+            </p>
+            <div class="card-footer">
+              <span class="card-price">$548,000</span>
+              <a class="card-cta" href="#contact">Tour →</a>
+            </div>
+          </div>
+        </article>
+        <article class="listing-card">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=700&q=80"
+              alt="Canyon Light House"
+            />
+            <span class="card-badge">Net-Zero</span>
+          </div>
+          <div class="card-body">
+            <p class="card-meta">4 beds · Austin, TX</p>
+            <h3>Canyon Light House</h3>
+            <p>
+              Battery storage, efficient glazing, native landscaping, and a
+              flexible studio for remote work.
+            </p>
+            <div class="card-footer">
+              <span class="card-price">$712,000</span>
+              <a class="card-cta" href="#contact">Tour →</a>
+            </div>
+          </div>
+        </article>
+        <article class="listing-card">
+          <div class="card-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80"
+              alt="Rail Garden Loft"
+            />
+            <span class="card-badge">Urban Green</span>
+          </div>
+          <div class="card-body">
+            <p class="card-meta">2 beds · Denver, CO</p>
+            <h3>Rail Garden Loft</h3>
+            <p>
+              Compact and walkable with induction cooking, low-VOC materials,
+              and a shared rooftop garden.
+            </p>
+            <div class="card-footer">
+              <span class="card-price">$389,000</span>
+              <a class="card-cta" href="#contact">Tour →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats-strip fade-in">
+      <div class="stats-inner">
+        <div class="stat">
+          <div class="stat-num">2,400+</div>
+          <div class="stat-label">Eco homes listed</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">98%</div>
+          <div class="stat-label">Client satisfaction</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">150+</div>
+          <div class="stat-label">Trusted agents</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REAL ESTATE -->
+    <section class="section" id="real-estate">
+      <div class="section-inner fade-in">
+        <div class="re-copy">
+          <p class="section-label">Real Estate</p>
+          <h2 class="display">Guidance from<br />search to closing.</h2>
+          <p class="sub">
+            Every step of the process, handled by people who understand what
+            sustainable really means — beyond the buzzwords.
+          </p>
+          <div class="service-list">
+            <div class="service-item">
+              <div class="service-num">01</div>
+              <div class="service-text">
+                <h3>Verified Listings</h3>
+                <p>
+                  Each property is reviewed for energy systems, materials, water
+                  use, and neighbourhood fit before it appears on Poulls.
+                </p>
+              </div>
+            </div>
+            <div class="service-item">
+              <div class="service-num">02</div>
+              <div class="service-text">
+                <h3>Agent Matching</h3>
+                <p>
+                  Connect with professionals who understand solar, green
+                  financing, inspections, and local incentives.
+                </p>
+              </div>
+            </div>
+            <div class="service-item">
+              <div class="service-num">03</div>
+              <div class="service-text">
+                <h3>Clear Comparisons</h3>
+                <p>
+                  Compare monthly costs, efficiency upgrades, and long-term
+                  value before you ever book a tour.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="re-photo">
+          <img
+            src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=700&q=80"
+            alt="Eco home interior"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="fade-in">
+      <div class="contact-copy">
+        <p class="section-label">Contact</p>
+        <h2 class="display">Ready to see<br />what fits?</h2>
+        <p class="sub">
+          Tell us where you want to live and what matters most. A Poulls advisor
+          will help narrow the search — no pressure, no jargon.
+        </p>
+        <div class="contact-detail">
+          <div class="contact-line">
+            <span class="contact-line-icon">✉</span> hello@poulls.com
+          </div>
+          <div class="contact-line">
+            <span class="contact-line-icon">☎</span> +1 (800) 765-4321
+          </div>
+          <div class="contact-line">
+            <span class="contact-line-icon">⊙</span> Austin · Portland · Denver
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name</label><input type="text" placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label>Email</label
+            ><input type="email" placeholder="you@example.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Interest</label>
+          <select>
+            <option>I'm looking to buy</option>
+            <option>I want to list a property</option>
+            <option>I need an agent</option>
+            <option>General inquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label
+          ><textarea placeholder="Tell us about your ideal home…"></textarea>
+        </div>
+        <button class="submit-btn" type="button">Send message →</button>
+      </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <span class="footer-brand">Poulls</span>
+      <p>
+        © 2026 Poulls. Sustainable homes, thoughtfully matched. Built with ♥ for
+        the planet.
+      </p>
+    </footer>
+
+    <script>
+      // Active nav via IntersectionObserver
+      const sectionIds = ["home", "find", "real-estate", "contact"];
+      const navAnchors = document.querySelectorAll(".nav-links a[data-sec]");
+      const navbar = document.getElementById("navbar");
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              navAnchors.forEach((a) => a.classList.remove("active"));
+              const m = document.querySelector(
+                `.nav-links a[data-sec="${e.target.id}"]`,
+              );
+              if (m) m.classList.add("active");
+            }
+          });
+        },
+        { rootMargin: "-35% 0px -55% 0px", threshold: 0 },
+      );
+
+      sectionIds.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) io.observe(el);
+      });
+
+      // Navbar scroll shadow
+      window.addEventListener(
+        "scroll",
+        () => {
+          navbar.classList.toggle("scrolled", window.scrollY > 20);
+        },
+        { passive: true },
+      );
+
+      // Fade in on scroll
+      const fio = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              fio.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.08 },
+      );
+      document.querySelectorAll(".fade-in").forEach((el) => fio.observe(el));
+    </script>
+  </body>
+</html>
