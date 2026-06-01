@@ -1,5 +1,24 @@
+# Git
 .git
 .github
+
+# Docs
 README.md
+*.md
+
+# Dependencies (will be installed inside container)
 node_modules
 npm-debug.log
+*.log
+
+# Environment variables (never copy secrets)
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode
+.idea

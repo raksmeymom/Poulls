@@ -175,6 +175,26 @@
       </div>
     </div>
 
+    <!-- LIVE UPDATES -->
+    <section class="section" id="live">
+      <div class="section-inner fade-in">
+        <div class="live-copy">
+          <p class="section-label">Live</p>
+          <h2 class="display">Realtime listing alerts</h2>
+          <p class="sub">
+            New eco-friendly homes and market notes, delivered instantly as they
+            arrive.
+          </p>
+          <div class="live-status" id="liveStatus">
+            <span class="live-dot"></span> Connecting…
+          </div>
+          <ul class="live-feed" id="liveFeed">
+            <li>Waiting for the live server to broadcast updates.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- REAL ESTATE -->
     <section class="section" id="real-estate">
       <div class="section-inner fade-in">
@@ -284,13 +304,14 @@
       </p>
     </footer>
 
+    <script src="/socket.io/socket.io.js"></script>
     <script>
       // Active nav via IntersectionObserver
       const sectionIds = ["home", "find", "real-estate", "contact"];
       const navAnchors = document.querySelectorAll(".nav-links a[data-sec]");
       const navbar = document.getElementById("navbar");
 
-      const io = new IntersectionObserver(
+      const sectionObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((e) => {
             if (e.isIntersecting) {
@@ -307,7 +328,7 @@
 
       sectionIds.forEach((id) => {
         const el = document.getElementById(id);
-        if (el) io.observe(el);
+        if (el) sectionObserver.observe(el);
       });
 
       // Navbar scroll shadow
@@ -332,6 +353,42 @@
         { threshold: 0.08 },
       );
       document.querySelectorAll(".fade-in").forEach((el) => fio.observe(el));
+
+      // Realtime feed
+      const liveFeed = document.getElementById("liveFeed");
+      const liveStatus = document.getElementById("liveStatus");
+
+      function addLiveUpdate(text) {
+        const item = document.createElement("li");
+        item.textContent = text;
+        liveFeed.prepend(item);
+        while (liveFeed.childElementCount > 5) {
+          liveFeed.removeChild(liveFeed.lastElementChild);
+        }
+      }
+
+      const socket = io();
+      socket.on("connect", () => {
+        liveStatus.innerHTML =
+          '<span class="live-dot online"></span> Live updates enabled';
+        addLiveUpdate("Connected to the live listings server.");
+      });
+
+      socket.on("status", (payload) => {
+        addLiveUpdate(payload.message);
+      });
+
+      socket.on("listingUpdate", (update) => {
+        addLiveUpdate(
+          `New listing: ${update.title} — ${update.location} (${update.tag}) for ${update.price}`,
+        );
+      });
+
+      socket.on("disconnect", () => {
+        liveStatus.innerHTML =
+          '<span class="live-dot"></span> Disconnected from live server';
+        addLiveUpdate("Live server connection lost.");
+      });
     </script>
   </body>
 </html>
